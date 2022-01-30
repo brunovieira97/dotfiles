@@ -1,0 +1,33 @@
+tap "microsoft/git"
+tap "homebrew/cask-fonts"
+
+brew "bat"
+brew "cmake"
+brew "gh"
+brew "git"
+brew "gnupg"
+brew "htop"
+brew "maven"
+brew "node"
+brew "openjdk"
+brew "pinentry"
+brew "pinentry-mac"
+brew "speedtest-cli"
+
+cask "android-commandlinetools"
+cask "font-cascadia-code"
+cask "font-cascadia-code-pl"
+cask "font-cascadia-mono"
+cask "font-cascadia-mono-pl"
+cask "font-fira-code"
+cask "git-credential-manager-core"
+
+mas "1Password 7", id: 1333542190
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneNote", id: 784801555
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
+mas "Speedtest", id: 1153157709
+mas "Telegram", id: 747648890
+mas "WhatsApp", id: 1147396723
+mas "Xcode", id: 497799835
