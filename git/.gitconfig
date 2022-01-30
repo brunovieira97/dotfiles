@@ -1,0 +1,77 @@
+[user]
+	name = Bruno Vieira
+	email = bruno.vieira97@outlook.com
+	signingkey = 3547FB4A825B7E68
+
+[core]
+	editor = code --wait
+
+[commit]
+	gpgsign = true
+
+[init]
+	defaultBranch = main
+
+[pager]
+	branch = false
+
+# Need to assign an empty helper to make GCM exclusive (prevent usage of osxkeychain)
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager-core
+
+[pull]
+	rebase = false
+
+[diff]
+	tool = vscode
+
+[difftool]
+	prompt = false
+
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+	tool = vscode
+
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
+[alias]
+	# Log variation with branch graph and formatted output:
+	#	SHA-1 - Commit description (user-friendly date) <author name>
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	
+	# Blame-like log for a specific file or folder.
+	file-log = log -p -M --follow --stat --
+
+	# List commit authors ordered by their number of commits
+	#	Commits, author name
+	rank = shortlog -sn --no-merges
+
+	# Remove all branches that have been merged.
+	rm-merged-branches = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+
+	# Open .gitconfig user file on default editor.
+	conf = config --global -e
+
+	# Resets the previous commit, keeping all changes in the working tree.
+	undo = reset HEAD~1 --mixed
+
+	# Modify the latest commit
+	# Adds any modifications and deletions of existing files
+	# Ignores new untracked files
+	# Opens default commit editor for message editing
+	amend = commit -a --amend
+
+	# Undoes all current changes and goes back to the last commit.
+	# For restoration purposes, the current changes aren't just discarded:
+	#	An unreachable commit is made, thus allowing it to be restored via reflog operations.
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
