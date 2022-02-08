@@ -34,7 +34,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias ll='ls -lAo'
+alias l='ls -lho'
+alias ll='ls -Aho'
 alias cat='bat -pp'
 alias qrcode='curl qrcode.show -d'
 
