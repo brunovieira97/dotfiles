@@ -105,11 +105,18 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 
+# TextEdit
+
+# Start with an untitled file instead of file picker window
+defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
+
+
 # Close any affected apps
 for app in "cfprefsd" \
 	"Dock" \
 	"Finder" \
 	"Safari" \
+	"TextEdit" \
 	"SystemUIServer"; do
 	killall "${app}" &> /dev/null
 done
