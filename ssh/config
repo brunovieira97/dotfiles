@@ -1,5 +1,5 @@
 Host *
-	IdentityFile ~/.ssh/id_ed25519
+	IdentityFile ~/.ssh/keys/personal
 	AddKeysToAgent yes
 	ServerAliveInterval 60
 	UseKeychain yes
