@@ -2,8 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 export JAVA_HOME="/opt/homebrew/opt/openjdk"
-HOMEBREW_PATH="/opt/homebrew/bin"
-export PATH="$HOMEBREW_PATH:$JAVA_HOME/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 export CLICOLOR=1
 export GPG_TTY=$TTY
