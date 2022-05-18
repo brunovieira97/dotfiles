@@ -2,7 +2,6 @@ tap "microsoft/git"
 tap "homebrew/cask-fonts"
 
 brew "bat"
-brew "cmake"
 brew "gh"
 brew "git"
 brew "gnupg"
