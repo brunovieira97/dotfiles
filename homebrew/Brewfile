@@ -22,7 +22,6 @@ cask "font-cascadia-mono-pl"
 cask "font-fira-code"
 cask "git-credential-manager-core"
 
-mas "1Password 7", id: 1333542190
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft PowerPoint", id: 462062816
