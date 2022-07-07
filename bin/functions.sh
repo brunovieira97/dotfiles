@@ -140,7 +140,9 @@ function setup_gnupg() {
 }
 
 function setup_ssh() {
-	create_symlink "$BASE_PATH/ssh/config" "$HOME/.ssh/config"
+	mkdir -p ~/.1password
+	
+	create_symlink "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
 }
 
 function setup_git() {
