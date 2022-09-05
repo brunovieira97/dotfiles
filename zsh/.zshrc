@@ -1,7 +1,7 @@
 # Env variables
 export ZSH="$HOME/.oh-my-zsh"
 
-export JAVA_HOME="/opt/homebrew/opt/openjdk"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home"
 export PATH="$JAVA_HOME/bin:$PATH"
 
 export CLICOLOR=1
