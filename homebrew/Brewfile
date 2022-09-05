@@ -1,5 +1,6 @@
 tap "microsoft/git"
 tap "homebrew/cask-fonts"
+tap "teamookla/speedtest"
 
 brew "bat"
 brew "gh"
@@ -12,7 +13,7 @@ brew "node"
 brew "openjdk"
 brew "pinentry"
 brew "pinentry-mac"
-brew "speedtest-cli"
+brew "speedtest"
 
 cask "android-commandlinetools"
 cask "font-cascadia-code"
