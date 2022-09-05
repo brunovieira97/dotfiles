@@ -36,7 +36,7 @@
 	tool = vscode
 
 [mergetool "vscode"]
-	cmd = code --wait $MERGED
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
