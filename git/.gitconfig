@@ -18,7 +18,7 @@
 # Need to assign an empty helper to make GCM exclusive (prevent usage of osxkeychain)
 [credential]
 	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager-core
+	helper = /usr/local/share/gcm-core/git-credential-manager
 
 [pull]
 	rebase = false
