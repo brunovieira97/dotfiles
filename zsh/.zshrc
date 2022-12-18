@@ -35,7 +35,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias l='ls -lho'
 alias ll='ls -Aho'
-alias cat='bat -pp'
+alias cat='bat'
 alias qrcode='curl qrcode.show -d'
 
 # iTerm2 shell integration
