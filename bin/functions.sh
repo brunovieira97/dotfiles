@@ -153,6 +153,12 @@ function setup_vim() {
 	create_symlink "$BASE_PATH/vim/.vimrc" "$HOME/.vimrc"
 }
 
+function setup_bat() {
+	mkdir -p ~/.config/bat
+
+	create_symlink "$BASE_PATH/bat/config" "$HOME/.config/bat/config"
+}
+
 function setup_zsh() {
 	print_step "Checking if Zsh is the default shell"
 

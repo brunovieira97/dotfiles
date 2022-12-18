@@ -45,7 +45,10 @@ setup_git
 print_title "8. Vim"
 setup_vim
 
-print_title "9. Zsh + Oh-My-Zsh"
+print_title "9. Bat"
+setup_bat
+
+print_title "10. Zsh + Oh-My-Zsh"
 setup_zsh
 
 printf "Setup finished. It is advised to reboot now.\n"
