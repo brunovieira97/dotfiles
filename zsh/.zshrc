@@ -27,6 +27,7 @@ plugins=(
 	fast-syntax-highlighting
 	git
 	macos
+	zsh-autosuggestions
 )
 
 # Oh-My-Zsh setup
