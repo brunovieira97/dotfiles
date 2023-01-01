@@ -33,22 +33,19 @@ setup_iterm2
 print_title "4. MacOS"
 setup_macos
 
-print_title "5. GnuPG"
-setup_gnupg
-
-print_title "6. SSH"
+print_title "5. SSH"
 setup_ssh
 
-print_title "7. Git"
+print_title "6. Git"
 setup_git
 
-print_title "8. Vim"
+print_title "7. Vim"
 setup_vim
 
-print_title "9. Bat"
+print_title "8. Bat"
 setup_bat
 
-print_title "10. Zsh + Oh-My-Zsh"
+print_title "9. Zsh + Oh-My-Zsh"
 setup_zsh
 
 printf "Setup finished. It is advised to reboot now.\n"

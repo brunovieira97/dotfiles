@@ -1,18 +1,14 @@
-tap "microsoft/git"
 tap "homebrew/cask-fonts"
 tap "teamookla/speedtest"
 
 brew "bat"
 brew "gh"
 brew "git"
-brew "gnupg"
 brew "gradle"
 brew "htop"
 brew "maven"
 brew "node"
 brew "openjdk"
-brew "pinentry"
-brew "pinentry-mac"
 brew "speedtest"
 
 cask "android-commandlinetools"
@@ -21,7 +17,6 @@ cask "font-cascadia-code-pl"
 cask "font-cascadia-mono"
 cask "font-cascadia-mono-pl"
 cask "font-fira-code"
-cask "git-credential-manager-core"
 
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
