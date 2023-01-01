@@ -1,7 +1,7 @@
 [user]
 	name = Bruno Vieira
 	email = bruno.vieira97@outlook.com
-	signingkey = 3547FB4A825B7E68
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFsvX5PdahAMlXjG68M3yyKOvQoQndjgHJ3lUyjnWgdS
 
 [core]
 	editor = code --wait
@@ -9,16 +9,17 @@
 [commit]
 	gpgsign = true
 
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
 [init]
 	defaultBranch = main
 
 [pager]
 	branch = false
-
-# Need to assign an empty helper to make GCM exclusive (prevent usage of osxkeychain)
-[credential]
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
 
 [pull]
 	rebase = false
