@@ -135,14 +135,13 @@ function setup_macos() {
 	print_info "Done. Note that some of these changes require a logout/restart to take effect."
 }
 
-function setup_gnupg() {
-	create_symlink "$BASE_PATH/gnupg/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
-}
-
 function setup_ssh() {
 	mkdir -p ~/.1password
+	mkdir -p ~/.ssh
 	
 	create_symlink "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
+	create_symlink "$BASE_PATH/ssh/allowed_signers" "$HOME/.ssh/allowed_signers"
+	create_symlink "$BASE_PATH/ssh/config" "$HOME/.ssh/config"
 }
 
 function setup_git() {
