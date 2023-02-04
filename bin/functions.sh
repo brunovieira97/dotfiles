@@ -20,6 +20,12 @@ function homebrew_restore_brewfile() {
 	fi
 }
 
+function homebrew_create_symlinks() {
+	print_step_ln "Creating symlinks for Homebrew formulae"
+
+	create_symlink "/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk" "/Library/Java/JavaVirtualMachines/openjdk-17.jdk"
+}
+
 function zsh_set_default() {
 	print_step "Changing default shell to Zsh"
 
@@ -101,6 +107,7 @@ function setup_homebrew() {
 	fi
 
 	homebrew_restore_brewfile
+	homebrew_create_symlinks
 }
 
 function setup_iterm2() {
