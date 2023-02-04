@@ -2,7 +2,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home"
-export PATH="$JAVA_HOME/bin:$PATH"
+export NODE_HOME="/opt/homebrew/opt/node@18"
+export PATH="$JAVA_HOME/bin:$NODE_HOME/bin:$PATH"
 
 export CLICOLOR=1
 export GPG_TTY=$TTY
@@ -27,7 +28,6 @@ plugins=(
 	fast-syntax-highlighting
 	git
 	macos
-	zsh-autosuggestions
 )
 
 # Oh-My-Zsh setup
