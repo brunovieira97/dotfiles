@@ -38,6 +38,7 @@ alias l='ls -lho'
 alias ll='ls -Aho'
 alias cat='bat'
 alias qrcode='curl qrcode.show -d'
+alias sizerank='du -sh * 2>/dev/null | sort -hr'
 
 # iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
