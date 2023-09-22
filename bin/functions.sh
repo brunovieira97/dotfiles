@@ -23,7 +23,7 @@ function homebrew_restore_brewfile() {
 function homebrew_create_symlinks() {
 	print_step_ln "Creating symlinks for Homebrew formulae"
 
-	create_symlink "/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk" "/Library/Java/JavaVirtualMachines/openjdk-17.jdk"
+	create_symlink "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk" "/Library/Java/JavaVirtualMachines/openjdk.jdk"
 }
 
 function zsh_set_default() {

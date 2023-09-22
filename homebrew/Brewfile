@@ -7,7 +7,7 @@ brew "git"
 brew "gradle"
 brew "maven"
 brew "node@18"
-brew "openjdk@17"
+brew "openjdk"
 brew "speedtest"
 
 casl "1password-cli"

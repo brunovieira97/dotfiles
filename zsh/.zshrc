@@ -1,7 +1,7 @@
 # Env variables
 export ZSH="$HOME/.oh-my-zsh"
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
 export NODE_HOME="/opt/homebrew/opt/node@18"
 export PATH="$JAVA_HOME/bin:$NODE_HOME/bin:$PATH"
 
