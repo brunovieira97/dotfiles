@@ -31,6 +31,14 @@ function is_homebrew_installed() {
 	fi
 }
 
+function is_asdf_installed() {
+	if [[ $(command -v asdf) == "" ]]; then
+		false
+	else
+		true
+	fi
+}
+
 function is_zsh_default() {
 	zshPath=$(which zsh)
 

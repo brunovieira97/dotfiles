@@ -48,3 +48,7 @@ function fail() {
 function print_info() {
 	printf "[${COLOR_INFO}INFO${COLOR_RESET}] $1\n"
 }
+
+function print_error() {
+	printf "[${COLOR_FAIL}ERROR${COLOR_RESET}] $1\n"
+}

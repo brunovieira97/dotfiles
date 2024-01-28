@@ -27,25 +27,28 @@ setup_xcode_tools
 print_title "2. Homebrew"
 setup_homebrew
 
-print_title "3. iTerm"
+print_title "3. ASDF"
+setup_asdf
+
+print_title "4. iTerm"
 setup_iterm2
 
-print_title "4. MacOS"
+print_title "5. MacOS"
 setup_macos
 
-print_title "5. SSH"
+print_title "6. SSH"
 setup_ssh
 
-print_title "6. Git"
+print_title "7. Git"
 setup_git
 
-print_title "7. Vim"
+print_title "8. Vim"
 setup_vim
 
-print_title "8. Bat"
+print_title "9. Bat"
 setup_bat
 
-print_title "9. Zsh + Oh-My-Zsh"
+print_title "10. Zsh + Oh-My-Zsh"
 setup_zsh
 
 printf "Setup finished. It is advised to reboot now.\n"

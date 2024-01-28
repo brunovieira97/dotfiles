@@ -20,10 +20,27 @@ function homebrew_restore_brewfile() {
 	fi
 }
 
-function homebrew_create_symlinks() {
-	print_step_ln "Creating symlinks for Homebrew formulae"
+function asdf_install() {
+	print_step_ln "Installing asdf"
+	print_step "Trying via Homebrew first"
 
-	create_symlink "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk" "/Library/Java/JavaVirtualMachines/openjdk.jdk"
+	brew install asdf > /dev/null
+
+	if ! is_asdf_installed; then
+		fail
+
+		print_error "asdf could not be installed. Install manually later from https://asdf-vm.com/"
+	else
+		success
+	fi
+}
+
+function asdf_add_plugins() {
+	while read line; do
+		print_step_ln "Adding plugins"
+
+		asdf plugin add $line > /dev/null
+	done < $BASE_PATH/asdf/plugins
 }
 
 function zsh_set_default() {
@@ -107,7 +124,22 @@ function setup_homebrew() {
 	fi
 
 	homebrew_restore_brewfile
-	homebrew_create_symlinks
+}
+
+function setup_asdf() {
+	print_step "Checking if asdf is installed"
+
+	if ! is_asdf_installed; then
+		fail "Not installed."
+
+		asdf_install
+	else
+		success "Already installed."
+	fi
+
+	if is_asdf_installed; then
+		asdf_add_plugins
+	fi
 }
 
 function setup_iterm2() {
