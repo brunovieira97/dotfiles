@@ -1,14 +1,12 @@
 tap "homebrew/cask-fonts"
 tap "teamookla/speedtest"
 
+brew "asdf"
 brew "bat"
 brew "gh"
 brew "git"
-brew "gradle"
-brew "maven"
-brew "node@18"
-brew "openjdk"
 brew "speedtest"
+brew "zsh-completions"
 
 casl "1password-cli"
 cask "android-commandlinetools"
