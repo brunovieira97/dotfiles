@@ -1,10 +1,6 @@
 # Env variables
 export ZSH="$HOME/.oh-my-zsh"
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
-export NODE_HOME="/opt/homebrew/opt/node@18"
-export PATH="$JAVA_HOME/bin:$NODE_HOME/bin:$PATH"
-
 export CLICOLOR=1
 export GPG_TTY=$TTY
 
@@ -45,3 +41,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # 1Password CLI completions
 eval "$(op completion zsh)"; compdef _op op
+
+# ASDF
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
