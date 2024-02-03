@@ -15,5 +15,3 @@ cask "font-cascadia-code-pl"
 cask "font-cascadia-mono"
 cask "font-cascadia-mono-pl"
 cask "font-fira-code"
-
-mas "Xcode", id: 497799835
