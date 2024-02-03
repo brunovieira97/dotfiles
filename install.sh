@@ -7,7 +7,6 @@ PRODUCT_VERSION=$(sw_vers -productVersion)
 
 # Dependencies
 source "$BASE_PATH/bin/core.sh"
-source "$BASE_PATH/bin/utils.sh"
 source "$BASE_PATH/bin/functions.sh"
 
 # Ask for the administrator password upfront
@@ -21,35 +20,35 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 touch $HOME/.hushlogin > /dev/null
 
-print_title "1. XCode"
+print_title "XCode Tools"
 setup_xcode_tools
 
-print_title "2. Homebrew"
+print_title "Homebrew"
 setup_homebrew
 
-print_title "3. ASDF"
+print_title "Zsh + Oh-My-Zsh"
+setup_zsh
+
+print_title "ASDF"
 setup_asdf
 
-print_title "4. iTerm"
-setup_iterm2
-
-print_title "5. MacOS"
+print_title "MacOS"
 setup_macos
 
-print_title "6. SSH"
+print_title "SSH"
 setup_ssh
 
-print_title "7. Git"
+print_title "Git"
 setup_git
 
-print_title "8. Vim"
+print_title "Vim"
 setup_vim
 
-print_title "9. Bat"
+print_title "Bat"
 setup_bat
 
-print_title "10. Zsh + Oh-My-Zsh"
-setup_zsh
+print_title "iTerm"
+setup_iterm2
 
 printf "Setup finished. It is advised to reboot now.\n"
 read -p "Do you want to reboot? [y/N] " -n 1 -r

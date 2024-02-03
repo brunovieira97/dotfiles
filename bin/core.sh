@@ -11,11 +11,11 @@ TEXT_BOLD=$(tput bold)
 TEXT_NORMAL=$(tput sgr0)
 
 function print_title() {
-	printf "\n${COLOR_TITLE}$1${COLOR_RESET}\n"
+	printf "\n[${COLOR_TITLE}$1${COLOR_RESET}]\n"
 }
 
 function print_step() {
-	printf "  ${COLOR_EXTRA}>${COLOR_RESET} $1... "
+	printf "${COLOR_EXTRA}>${COLOR_RESET} $1... "
 }
 
 function print_step_ln() {

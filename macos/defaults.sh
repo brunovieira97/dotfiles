@@ -81,23 +81,6 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 
-# Safari & WebKit
-
-# Don't open 'safe' files automatically after downloading
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
-
-# Enable the Develop menu and Web Inspector
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
-
-# Disable Autofill of passwords
-defaults write com.apple.Safari AutoFillPasswords -bool false
-
-# Enable "Do Not Track"
-defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
-
-
 # Security and Privacy
 
 # Require password immediately after sleep or screen saver begins
@@ -115,7 +98,6 @@ defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile
 for app in "cfprefsd" \
 	"Dock" \
 	"Finder" \
-	"Safari" \
 	"TextEdit" \
 	"SystemUIServer"; do
 	killall "${app}" &> /dev/null

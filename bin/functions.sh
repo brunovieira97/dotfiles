@@ -2,10 +2,75 @@
 
 # Helper functions
 
+function create_symlink() {
+	filename=$(basename $2)
+
+	print_step "Creating symlink for: $filename"
+
+	ln -Ffs "$1" "$2" > /dev/null
+
+	if [[ -f "$2" ]]; then
+		success
+	else
+		fail
+		exit 1
+	fi
+}
+
+function is_1password_installed() {
+	if [ ! -d "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password" ]; then
+		false
+	else
+		true
+	fi
+}
+
+function is_xcode_tools_installed() {
+	if [[ $(xcode-select -p) == "" ]]; then
+		false
+	else
+		true
+	fi
+}
+
+function is_homebrew_installed() {
+	if [[ $(command -v brew) == "" ]]; then
+		false
+	else
+		true
+	fi
+}
+
+function is_asdf_installed() {
+	if [[ $(command -v asdf) == "" ]]; then
+		false
+	else
+		true
+	fi
+}
+
+function is_zsh_default() {
+	zshPath=$(which zsh)
+
+	if [ $SHELL == $zshPath ]; then
+		true
+	else
+		false
+	fi
+}
+
+function is_ohmyzsh_installed() {
+	if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+		false
+	else
+		true
+	fi
+}
+
 function homebrew_install() {
 	print_step_ln "Installing Homebrew"
 		
-	CI=1 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
+	CI=1 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &> /dev/null
 
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
@@ -17,21 +82,6 @@ function homebrew_restore_brewfile() {
 
 	if [ $? -ne 0 ]; then
 		exit 1
-	fi
-}
-
-function asdf_install() {
-	print_step_ln "Installing asdf"
-	print_step "Trying via Homebrew first"
-
-	brew install asdf > /dev/null
-
-	if ! is_asdf_installed; then
-		fail
-
-		print_error "asdf could not be installed. Install manually later from https://asdf-vm.com/"
-	else
-		success
 	fi
 }
 
@@ -59,7 +109,7 @@ function zsh_set_default() {
 function zsh_install_ohmyzsh() {
 	print_step "Installing Oh-My-Zsh"
 
-	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" > /dev/null
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended &> /dev/null
 
 	if is_ohmyzsh_installed; then
 		success
@@ -129,16 +179,12 @@ function setup_homebrew() {
 function setup_asdf() {
 	print_step "Checking if asdf is installed"
 
-	if ! is_asdf_installed; then
-		fail "Not installed."
-
-		asdf_install
-	else
-		success "Already installed."
-	fi
-
 	if is_asdf_installed; then
+		success "Already installed."
+		create_symlink "$BASE_PATH/asdf/.asdfrc" "$HOME/.asdfrc"
 		asdf_add_plugins
+	else
+		fail "Not installed. Skipping plugins setup."
 	fi
 }
 
@@ -161,7 +207,7 @@ function setup_iterm2() {
 function setup_macos() {
 	print_step "Running ${TEXT_BOLD}$BASE_PATH/macos/defaults.sh${TEXT_NORMAL} for applying settings"
 	
-	source "$BASE_PATH/macos/defaults.sh"
+	source "$BASE_PATH/macos/defaults.sh" > /dev/null
 
 	if [ $? -eq 0 ]; then
 		success
@@ -178,7 +224,12 @@ function setup_ssh() {
 	mkdir -p ~/.1password
 	mkdir -p ~/.ssh
 	
-	create_symlink "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
+	if [ ! -d "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password" ]; then
+		print_info "1Password is not installed, skipping agent.sock symlink creation."
+	else
+		create_symlink "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
+	fi
+
 	create_symlink "$BASE_PATH/ssh/allowed_signers" "$HOME/.ssh/allowed_signers"
 	create_symlink "$BASE_PATH/ssh/config" "$HOME/.ssh/config"
 }
