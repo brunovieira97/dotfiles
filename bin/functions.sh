@@ -5,7 +5,7 @@
 function homebrew_install() {
 	print_step_ln "Installing Homebrew"
 		
-	NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
+	CI=1 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
 
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 }
