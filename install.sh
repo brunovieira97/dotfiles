@@ -47,6 +47,9 @@ setup_vim
 print_title "Bat"
 setup_bat
 
+print_title "cURL"
+setup_curl
+
 print_title "iTerm"
 setup_iterm2
 

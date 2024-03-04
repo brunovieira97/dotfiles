@@ -248,6 +248,10 @@ function setup_bat() {
 	create_symlink "$BASE_PATH/bat/config" "$HOME/.config/bat/config"
 }
 
+function setup_curl() {
+	create_symlink "$BASE_PATH/curl/.curlrc" "$HOME/.curlrc"
+}
+
 function setup_zsh() {
 	print_step "Checking if Zsh is the default shell"
 
