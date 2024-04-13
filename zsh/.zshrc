@@ -3,6 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 export CLICOLOR=1
 export GPG_TTY=$TTY
+export HOMEBREW_NO_ENV_HINTS=1
 
 # Theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
