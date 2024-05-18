@@ -1,4 +1,3 @@
-tap "homebrew/cask-fonts"
 tap "teamookla/speedtest"
 
 brew "asdf"
