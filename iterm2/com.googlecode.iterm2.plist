@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ClickToSelectCommand</key>
+	<false/>
 	<key>Default Bookmark Guid</key>
 	<string>D31AF13B-E40C-48BE-868A-647076F8EA5B</string>
 	<key>HapticFeedbackForEsc</key>
@@ -797,6 +799,8 @@
 			<true/>
 			<key>Smart Cursor Color</key>
 			<false/>
+			<key>Space</key>
+			<integer>0</integer>
 			<key>Status Bar Layout</key>
 			<dict>
 				<key>advanced configuration</key>
