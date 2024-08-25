@@ -49,13 +49,13 @@ defaults write com.apple.dock tilesize -int 48
 # Energy saving
 
 # Sleep display after 5 min (battery)
-sudo pmset -b displaysleep 5
+pmset -b displaysleep 5
 
 # Sleep display after 10 min (charging)
-sudo pmset -c displaysleep 10
+pmset -c displaysleep 10
 
 # Set machine sleep to 5 minutes on battery
-sudo pmset -b sleep 5
+pmset -b sleep 5
 
 
 # Finder

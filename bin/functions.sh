@@ -224,10 +224,10 @@ function setup_ssh() {
 	mkdir -p ~/.1password
 	mkdir -p ~/.ssh
 	
-	if [ ! -d "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password" ]; then
+	if [ ! -d "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password" ]; then
 		print_info "1Password is not installed, skipping agent.sock symlink creation."
 	else
-		create_symlink "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
+		create_symlink "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
 	fi
 
 	create_symlink "$BASE_PATH/ssh/allowed_signers" "$HOME/.ssh/allowed_signers"
