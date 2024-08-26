@@ -15,6 +15,9 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
+# Repeat instead of showing special characters when holding a key
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 
 # Dock
 
