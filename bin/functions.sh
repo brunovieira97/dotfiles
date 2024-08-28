@@ -1,5 +1,7 @@
 #!/bin/bash
 
+VAR_HOMEBREW_PATH=/opt/homebrew/bin
+
 # Helper functions
 
 function create_symlink() {
@@ -34,7 +36,7 @@ function is_xcode_tools_installed() {
 }
 
 function is_homebrew_installed() {
-	if [[ $(command -v brew) == "" ]]; then
+	if [ ! -d $VAR_HOMEBREW_PATH ]; then
 		false
 	else
 		true
@@ -70,15 +72,15 @@ function is_ohmyzsh_installed() {
 function homebrew_install() {
 	print_step_ln "Installing Homebrew"
 		
-	CI=1 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &> /dev/null
+	CI=1 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh) &> /dev/null" &> /dev/null
 
-	eval "$(/opt/homebrew/bin/brew shellenv)"
+	eval "$($VAR_HOMEBREW_PATH/brew shellenv)"
 }
 
 function homebrew_restore_brewfile() {
 	print_step_ln "Restoring Brewfile"
 
-	brew bundle --file $BASE_PATH/homebrew/Brewfile
+	$VAR_HOMEBREW_PATH/brew bundle --file $BASE_PATH/homebrew/Brewfile
 
 	if [ $? -ne 0 ]; then
 		exit 1
@@ -168,7 +170,7 @@ function setup_homebrew() {
 		success "Already installed."
 		print_step "Running ${TEXT_BOLD}brew update${TEXT_NORMAL}"
 		
-		/bin/bash -c "brew update --quiet" > /dev/null
+		/bin/bash -c "$VAR_HOMEBREW_PATH/brew update --quiet" > /dev/null
 		
 		success
 	fi
