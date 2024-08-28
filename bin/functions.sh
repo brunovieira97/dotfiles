@@ -18,7 +18,7 @@ function create_symlink() {
 }
 
 function is_1password_installed() {
-	if [ ! -d "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password" ]; then
+	if [ ! -d "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password" ]; then
 		false
 	else
 		true
