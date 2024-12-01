@@ -508,13 +508,6 @@
 					<key>Text</key>
 					<string>[1;6A</string>
 				</dict>
-				<key>0xf700-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x41</string>
-				</dict>
 				<key>0xf701-0x220000-0x0</key>
 				<dict>
 					<key>Action</key>
@@ -535,13 +528,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;6B</string>
-				</dict>
-				<key>0xf701-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x42</string>
 				</dict>
 				<key>0xf702-0x240000-0x0</key>
 				<dict>
@@ -801,6 +787,8 @@
 			<string></string>
 			<key>Show Mark Indicators</key>
 			<false/>
+			<key>Show Offscreen Command line</key>
+			<false/>
 			<key>Show Status Bar</key>
 			<false/>
 			<key>Show Timestamps</key>
@@ -948,7 +936,7 @@
 			<key>Title Components</key>
 			<integer>66</integer>
 			<key>Transparency</key>
-			<real>0.15</real>
+			<real>0.15369348404255292</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
