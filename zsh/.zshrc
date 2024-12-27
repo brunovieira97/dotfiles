@@ -5,6 +5,8 @@ export CLICOLOR=1
 export GPG_TTY=$TTY
 export HOMEBREW_NO_ENV_HINTS=1
 
+export PATH="$PATH:/Users/bruno/.local/bin"
+
 # Theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
