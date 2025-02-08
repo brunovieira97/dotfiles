@@ -5,7 +5,7 @@ export CLICOLOR=1
 export GPG_TTY=$TTY
 export HOMEBREW_NO_ENV_HINTS=1
 
-export PATH="$PATH:/Users/bruno/.local/bin"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:/Users/bruno/.local/bin"
 
 # Theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -46,5 +46,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 eval "$(op completion zsh)"; compdef _op op
 
 # ASDF
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.zsh
