@@ -39,9 +39,6 @@ alias cat='bat'
 alias qrcode='curl qrcode.show -d'
 alias sizerank='du -sh * 2>/dev/null | sort -hr'
 
-# iTerm2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # 1Password CLI completions
 eval "$(op completion zsh)"; compdef _op op
 
