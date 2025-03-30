@@ -5,7 +5,10 @@ export CLICOLOR=1
 export GPG_TTY=$TTY
 export HOMEBREW_NO_ENV_HINTS=1
 
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:/Users/bruno/.local/bin"
+export ASDF_DATA_DIR="$HOME/.asdf"
+export PNPM_HOME="/Users/bruno/Library/pnpm"
+export PATH="$PNPM_HOME:$ASDF_DATA_DIR/shims:$PATH:/Users/bruno/.local/bin"
+
 
 # Theme to load
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
