@@ -53,6 +53,9 @@ setup_curl
 print_title "iTerm"
 setup_iterm2
 
+print_title "VSCodium"
+setup_vscodium
+
 printf "Setup finished. It is advised to reboot now.\n"
 read -p "Do you want to reboot? [y/N] " -n 1 -r
 

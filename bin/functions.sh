@@ -298,3 +298,11 @@ function setup_zsh() {
 	create_symlink "$BASE_PATH/zsh/.zprofile" "$HOME/.zprofile"
 	create_symlink "$BASE_PATH/zsh/.zshrc" "$HOME/.zshrc"
 }
+
+function setup_vscodium() {
+	print_step_ln "Linking User settings"
+	create_symlink "$BASE_PATH/vscodium/settings.json" "$HOME/Library/Application\ Support/VSCodium/User/settings.json"
+
+	print_step_ln "Linking User keybindings"
+	create_symlink "$BASE_PATH/vscodium/keybindings.json" "$HOME/Library/Application\ Support/VSCodium/User/keybindings.json"
+}
