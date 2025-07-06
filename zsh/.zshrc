@@ -34,9 +34,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
+alias cat='bat'
+alias code='codium'
 alias l='ls -lho'
 alias ll='ls -Aho'
-alias cat='bat'
 alias qrcode='curl qrcode.show -d'
 alias sizerank='du -sh * 2>/dev/null | sort -hr'
 
