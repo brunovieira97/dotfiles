@@ -25,8 +25,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Standard plugins = $ZSH/plugins/
 # Custom plugins = $ZSH_CUSTOM/plugins/
 plugins=(
-	docker
-	docker-compose
 	fast-syntax-highlighting
 	git
 	macos
