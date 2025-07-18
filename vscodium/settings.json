@@ -41,6 +41,7 @@
 
   // AI
   "chat.agent.enabled": false,
+  "chat.commandCenter.enabled": false,
 
   // Privacy
   "telemetry.enableCrashReporter": false,
@@ -75,36 +76,16 @@
 
   // GitLens
   "gitlens.ai.enabled": false,
-  "gitlens.blame.avatars": false,
   "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm Z",
   "gitlens.defaultDateStyle": "relative",
-  "gitlens.defaultGravatarsStyle": "identicon",
-  "gitlens.gitCommands.avatars": false,
-  "gitlens.graph.avatars": false,
+  "gitlens.defaultGravatarsStyle": "mp",
   "gitlens.graph.layout": "editor",
   "gitlens.graph.minimap.enabled": false,
-  "gitlens.hovers.avatars": false,
   "gitlens.integrations.enabled": false,
   "gitlens.plusFeatures.enabled": false,
-  "gitlens.views.commitDetails.avatars": false,
-  "gitlens.views.branches.avatars": false,
   "gitlens.views.branches.branches.layout": "list",
-  "gitlens.views.commits.avatars": false,
-  "gitlens.views.contributors.avatars": false,
-  "gitlens.views.drafts.avatars": false,
-  "gitlens.views.fileHistory.avatars": false,
-  "gitlens.views.launchpad.avatars": false,
-  "gitlens.views.lineHistory.avatars": false,
-  "gitlens.views.patchDetails.avatars": false,
-  "gitlens.views.pullRequest.avatars": false,
-  "gitlens.views.remotes.avatars": false,
-  "gitlens.views.repositories.avatars": false,
   "gitlens.views.repositories.files.layout": "tree",
-  "gitlens.views.searchAndCompare.avatars": false,
   "gitlens.views.showRelativeDateMarkers": false,
-  "gitlens.views.tags.avatars": false,
-  "gitlens.views.workspaces.avatars": false,
-  "gitlens.views.worktrees.avatars": false,
 
   // HTML
   "html.format.indentInnerHtml": true,
