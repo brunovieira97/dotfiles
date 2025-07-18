@@ -2,13 +2,11 @@ tap "teamookla/speedtest"
 
 brew "asdf"
 brew "bat"
-brew "gh"
 brew "git"
 brew "speedtest"
 brew "zsh-completions"
 
 cask "1password-cli"
-cask "android-commandlinetools"
 cask "font-cascadia-code"
 cask "font-cascadia-code-pl"
 cask "font-cascadia-code-nf"
