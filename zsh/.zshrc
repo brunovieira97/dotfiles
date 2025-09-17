@@ -7,6 +7,7 @@ export GPG_TTY=$TTY
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_UPDATE_REPORT_NEW=1
+export HOMEBREW_DOWNLOAD_CONCURRENCY="auto"
 
 export ASDF_DATA_DIR="$HOME/.asdf"
 export PNPM_HOME="/Users/bruno/Library/pnpm"
