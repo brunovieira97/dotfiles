@@ -3,19 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>AIFeatureFunctionCalling</key>
-	<false/>
+	<true/>
 	<key>AIFeatureHostedCodeInterpeter</key>
-	<false/>
+	<true/>
 	<key>AIFeatureHostedFileSearch</key>
-	<false/>
+	<true/>
 	<key>AIFeatureHostedWebSearch</key>
-	<false/>
+	<true/>
 	<key>AIFeatureStreamingResponses</key>
-	<false/>
+	<true/>
 	<key>AITermAPI</key>
 	<integer>2</integer>
+	<key>AIVectorStore</key>
+	<integer>0</integer>
 	<key>ActiveUpdateCadence</key>
 	<real>60</real>
+	<key>AiMaxTokens</key>
+	<integer>400000</integer>
+	<key>AiModel</key>
+	<string>gpt-5.1</string>
+	<key>AiResponseMaxTokens</key>
+	<integer>128000</integer>
+	<key>AitermURL</key>
+	<string>https://api.openai.com/v1/responses</string>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>ClickToSelectCommand</key>
