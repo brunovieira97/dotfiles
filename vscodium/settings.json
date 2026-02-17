@@ -17,6 +17,7 @@
   "terminal.integrated.rightClickBehavior": "default",
   
   // Workbench
+  "workbench.hover.delay": 300,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
@@ -45,6 +46,8 @@
   // AI
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
+  "chat.mcp.access": "none",
+  "chat.mcp.autostart": "never",
 
   // Privacy
   "telemetry.enableCrashReporter": false,
