@@ -4,7 +4,7 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFsvX5PdahAMlXjG68M3yyKOvQoQndjgHJ3lUyjnWgdS
 
 [core]
-	editor = code --wait
+	editor = codium --wait
 
 [commit]
 	gpgsign = true
@@ -22,26 +22,23 @@
 [pager]
 	branch = false
 
-[pull]
-	rebase = false
-
 [push]
 	autoSetupRemote = true
 
 [diff]
-	tool = vscode
+	tool = vscodium
 
 [difftool]
 	prompt = false
 
-[difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "vscodium"]
+	cmd = codium --wait --diff $LOCAL $REMOTE
 
 [merge]
-	tool = vscode
+	tool = vscodium
 
-[mergetool "vscode"]
-	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[mergetool "vscodium"]
+	cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
