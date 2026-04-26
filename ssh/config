@@ -1,3 +1,6 @@
 Host *
 	HashKnownHosts yes
 	ServerAliveInterval 60
+	UseKeychain yes
+	AddKeysToAgent yes
+	IdentityFile ~/.ssh/macbook-pro
