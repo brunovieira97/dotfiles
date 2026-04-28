@@ -1,6 +1,7 @@
 Host *
 	HashKnownHosts yes
 	ServerAliveInterval 60
-	UseKeychain yes
-	AddKeysToAgent yes
-	IdentityFile ~/.ssh/macbook-pro
+	ControlMaster auto
+    ControlPersist 10m
+    ControlPath ~/.ssh/sockets/%r@%k:%p
+	IdentityAgent ~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
