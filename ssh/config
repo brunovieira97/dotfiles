@@ -2,6 +2,6 @@ Host *
 	HashKnownHosts yes
 	ServerAliveInterval 60
 	ControlMaster auto
-    ControlPersist 10m
-    ControlPath ~/.ssh/sockets/%r@%k:%p
+    ControlPersist 30s
+    ControlPath ~/.ssh/sockets/%C
 	IdentityAgent ~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
