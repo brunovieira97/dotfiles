@@ -1,0 +1,30 @@
+theme = dark
+
+background-opacity = 0.85
+background-blur = 50
+
+cursor-style = bar
+cursor-style-blink = true
+
+font-family = Cascadia Code NF
+font-size = 14
+bold-color = bright
+
+auto-update = download
+auto-update-channel = stable
+
+window-height = 30
+window-width = 100
+
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+working-directory = home
+
+faint-opacity = 0.50
+
+copy-on-select = false
+confirm-close-surface = false
+macos-secure-input-indication = true
+window-colorspace = display-p3
+
+bell-features = no-title, no-system
