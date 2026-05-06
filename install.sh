@@ -6,8 +6,8 @@ PRODUCT_NAME=$(sw_vers -productName)
 PRODUCT_VERSION=$(sw_vers -productVersion)
 
 # Dependencies
-source "$BASE_PATH/bin/core.sh"
-source "$BASE_PATH/bin/functions.sh"
+source "$BASE_PATH/core.sh"
+source "$BASE_PATH/functions.sh"
 
 # Ask for the administrator password upfront
 sudo -v
@@ -50,8 +50,8 @@ setup_bat
 print_title "cURL"
 setup_curl
 
-print_title "iTerm"
-setup_iterm2
+print_title "Ghostty"
+setup_ghostty
 
 print_title "VSCodium"
 setup_vscodium

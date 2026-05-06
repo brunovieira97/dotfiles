@@ -6,8 +6,8 @@ PRODUCT_NAME=$(sw_vers -productName)
 PRODUCT_VERSION=$(sw_vers -productVersion)
 
 # Dependencies
-source "$BASE_PATH/bin/core.sh"
-source "$BASE_PATH/bin/functions.sh"
+source "$BASE_PATH/core.sh"
+source "$BASE_PATH/functions.sh"
 
 # Ask for the administrator password upfront
 sudo -v
@@ -26,6 +26,7 @@ rm -f "$HOME/.vimrc"
 rm -f "$HOME/.zprofile"
 rm -f "$HOME/.zshrc"
 rm -f "$HOME/.config/bat"
+rm -f "$HOME/.config/ghostty"
 rm -f "$HOME/.ssh/allowed_signers"
 rm -f "$HOME/.ssh/config"
 

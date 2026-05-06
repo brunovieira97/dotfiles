@@ -17,14 +17,6 @@ function create_symlink() {
 	fi
 }
 
-function is_1password_installed() {
-	if [ ! -d "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password" ]; then
-		false
-	else
-		true
-	fi
-}
-
 function is_xcode_tools_installed() {
 	if [[ $(xcode-select -p) == "" ]]; then
 		false
@@ -188,20 +180,10 @@ function setup_asdf() {
 	fi
 }
 
-function setup_iterm2() {
-	print_step "Installing shell integrations"
+function setup_ghostty() {
+	mkdir -p ~/.config
 
-	/bin/bash -c "$(curl -fsSL https://iterm2.com/shell_integration/install_shell_integration.sh)" > /dev/null
-
-	if [ $? -eq 0 ]; then
-		success
-	else
-		fail
-		exit 1
-	fi
-	
-	printf "\n"
-	print_info "Finish iTerm2 setup by importing ${BASE_PATH}/iterm2/Default.json"
+	create_symlink "$BASE_PATH/ghostty" "$HOME/.config/ghostty"
 }
 
 function macos_defaults() {
@@ -241,14 +223,7 @@ function setup_macos() {
 }
 
 function setup_ssh() {
-	mkdir -p ~/.1password
 	mkdir -p ~/.ssh
-	
-	if [ ! -d "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password" ]; then
-		print_info "1Password is not installed, skipping agent.sock symlink creation."
-	else
-		create_symlink "$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock" "$HOME/.1password/agent.sock"
-	fi
 
 	create_symlink "$BASE_PATH/ssh/allowed_signers" "$HOME/.ssh/allowed_signers"
 	create_symlink "$BASE_PATH/ssh/config" "$HOME/.ssh/config"
