@@ -45,8 +45,5 @@ alias ll='ls -Aho'
 alias qrcode='curl qrcode.show -d'
 alias sizerank='du -sh * 2>/dev/null | sort -hr'
 
-# 1Password CLI completions
-eval "$(op completion zsh)"; compdef _op op
-
 # ASDF
 . ~/.asdf/plugins/java/set-java-home.zsh
