@@ -13,8 +13,8 @@ bold-color = bright
 auto-update = download
 auto-update-channel = stable
 
-window-height = 30
-window-width = 100
+window-height = 32
+window-width = 105
 
 window-inherit-working-directory = false
 tab-inherit-working-directory = false
