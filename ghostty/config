@@ -1,32 +1,39 @@
-theme = dark
-
-background-opacity = 0.85
-background-blur = 50
-
-cursor-style = bar
-cursor-style-blink = true
-
-font-family = Cascadia Code NF
-font-size = 14
-bold-color = bright
-
 auto-update = download
 auto-update-channel = stable
 
-window-height = 32
-window-width = 105
-window-padding-x = 5
-window-padding-y = 5
+# behavior
+copy-on-select = false
+confirm-close-surface = false
 
 window-inherit-working-directory = false
 tab-inherit-working-directory = false
 working-directory = home
 
+bell-features = no-title, no-system
+
+
+# visuals
+cursor-style = bar
+cursor-style-blink = true
+
+font-family = Cascadia Code NF
+font-size = 14
+
+theme = dark-pro
+
+background-opacity = 0.85
+background-blur = 50
 faint-opacity = 0.50
 
-copy-on-select = false
-confirm-close-surface = false
-macos-secure-input-indication = true
 window-colorspace = display-p3
 
-bell-features = no-title, no-system
+
+# window
+window-height = 32
+window-width = 105
+window-padding-x = 5
+window-padding-y = 5
+
+
+# macOS
+macos-secure-input-indication = true

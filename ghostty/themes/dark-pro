@@ -1,7 +1,8 @@
 background = #000000
-foreground = #bbbbbb
+foreground = #c7c7c7
 
-cursor-color = #bbbbbb
+bold-color = #ffffff
+cursor-color = #c7c7c7
 
 selection-background = #b5d5ff
 selection-foreground = #000000
