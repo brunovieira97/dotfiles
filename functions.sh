@@ -199,24 +199,10 @@ function macos_defaults() {
 	fi
 }
 
-function macos_commands() {
-	print_step "Running ${TEXT_BOLD}$BASE_PATH/macos/commands.sh${TEXT_NORMAL}"
-	
-	source "$BASE_PATH/macos/commands.sh" > /dev/null
-
-	if [ $? -eq 0 ]; then
-		success
-	else
-		fail
-		exit 1
-	fi
-}
-
 function setup_macos() {
-	print_step "Running ${TEXT_BOLD}$BASE_PATH/macos/defaults.sh${TEXT_NORMAL} for applying settings"
+	print_step_ln "Setting up macOS based on custom defaults"
 	
 	macos_defaults
-	macos_commands
 
 	printf "\n"
 	print_info "Done. Note that some of these changes require a logout/restart to take effect."
