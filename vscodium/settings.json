@@ -9,14 +9,16 @@
   "editor.wrappingIndent": "indent",
 
   // Terminal
-  "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.osxExec": "ghostty.app",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontFamily": "Cascadia Code NF",
   "terminal.integrated.fontSize": 13,
+  "terminal.integrated.initialHint": false,
   "terminal.integrated.rightClickBehavior": "default",
   
   // Workbench
+  "workbench.editor.useModal": "off",
   "workbench.hover.delay": 300,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
@@ -45,13 +47,10 @@
 
   // AI
   "chat.agent.enabled": false,
-  "chat.commandCenter.enabled": false,
   "chat.mcp.access": "none",
   "chat.mcp.autostart": "never",
 
   // Privacy
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "gitlens.telemetry.enabled": false,
@@ -105,7 +104,6 @@
   // Java
   "java.compile.nullAnalysis.mode": "automatic",
   "java.configuration.updateBuildConfiguration": "automatic",
-  "java.help.showReleaseNotes": false,
 
   // Spring
   "spring.initializr.parentFolder": "none",
