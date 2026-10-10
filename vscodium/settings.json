@@ -19,6 +19,7 @@
   
   // Workbench
   "workbench.editor.useModal": "off",
+  "workbench.experimental.modernUI": true,
   "workbench.hover.delay": 300,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.settings.editor": "json",
