@@ -119,6 +119,11 @@ function zsh_clone_plugins() {
 		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting > /dev/null
 	fi
 
+	if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-shift-select" ]; then
+		git clone --quiet https://github.com/jirutka/zsh-shift-select.git \
+		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-shift-select > /dev/null
+	fi
+
 	if [ $? -ne 0 ]; then
 		fail
 		exit 1

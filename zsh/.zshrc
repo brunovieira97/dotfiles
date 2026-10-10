@@ -31,6 +31,7 @@ plugins=(
 	fast-syntax-highlighting
 	git
 	macos
+	zsh-shift-select
 )
 
 # Oh-My-Zsh setup
