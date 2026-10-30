@@ -8,9 +8,8 @@ export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_UPDATE_REPORT_NEW=1
 
-export ASDF_DATA_DIR="$HOME/.asdf"
 export PNPM_HOME="/Users/bruno/Library/pnpm"
-export PATH="$PNPM_HOME:$ASDF_DATA_DIR/shims:$PATH:/Users/bruno/.local/bin"
+export PATH="$PNPM_HOME:$HOME/.local/bin:$PATH"
 
 
 # Theme to load
@@ -45,5 +44,5 @@ alias ll='ls -Aho'
 alias qrcode='curl qrcode.show -d'
 alias sizerank='du -sh * 2>/dev/null | sort -hr'
 
-# ASDF
-. ~/.asdf/plugins/java/set-java-home.zsh
+# mise
+eval "$(mise activate zsh)"
