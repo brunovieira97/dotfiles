@@ -33,14 +33,6 @@ function is_homebrew_installed() {
 	fi
 }
 
-function is_asdf_installed() {
-	if [[ $(command -v asdf) == "" ]]; then
-		false
-	else
-		true
-	fi
-}
-
 function is_zsh_default() {
 	zshPath=$(which zsh)
 
@@ -75,14 +67,6 @@ function homebrew_restore_brewfile() {
 	if [ $? -ne 0 ]; then
 		exit 1
 	fi
-}
-
-function asdf_add_plugins() {
-	while read line; do
-		print_step_ln "Adding plugins"
-
-		asdf plugin add $line > /dev/null
-	done < $BASE_PATH/asdf/plugins
 }
 
 function zsh_set_default() {
@@ -173,16 +157,10 @@ function setup_homebrew() {
 	homebrew_restore_brewfile
 }
 
-function setup_asdf() {
-	print_step "Checking if asdf is installed"
+function setup_mise() {
+	mkdir -p ~/.config
 
-	if is_asdf_installed; then
-		success "Already installed."
-		create_symlink "$BASE_PATH/asdf/.asdfrc" "$HOME/.asdfrc"
-		asdf_add_plugins
-	else
-		fail "Not installed. Skipping plugins setup."
-	fi
+	create_symlink "$BASE_PATH/mise" "$HOME/.config/mise"
 }
 
 function setup_ghostty() {
@@ -229,9 +207,9 @@ function setup_vim() {
 }
 
 function setup_bat() {
-	mkdir -p ~/.config/bat
+	mkdir -p ~/.config
 
-	create_symlink "$BASE_PATH/bat/config" "$HOME/.config/bat/config"
+	create_symlink "$BASE_PATH/bat" "$HOME/.config/bat"
 }
 
 function setup_curl() {

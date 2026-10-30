@@ -29,8 +29,8 @@ setup_homebrew
 print_title "Zsh + Oh-My-Zsh"
 setup_zsh
 
-print_title "ASDF"
-setup_asdf
+print_title "Mise-en-place"
+setup_mise
 
 print_title "MacOS"
 setup_macos
