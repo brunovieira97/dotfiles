@@ -14,6 +14,7 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontFamily": "Cascadia Code NF",
   "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontRendering": "grayscale",
   "terminal.integrated.initialHint": false,
   "terminal.integrated.rightClickBehavior": "default",
   
@@ -55,7 +56,6 @@
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "gitlens.telemetry.enabled": false,
-  "redhat.telemetry.enabled": false,
 
   // Files
   "files.exclude": {
@@ -75,10 +75,15 @@
 
   // Git
   "git.blame.editorDecoration.enabled": false,
-  "git.blame.editorDecoration.template": "${authorName}, ${authorDateAgo} • [${hashShort}] ${subject}",
+  "git.blame.editorDecoration.template": "${authorName}, ${authorDateAgo} • ${subject}",
+  "git.blame.statusBarItem.enabled": true,
   "git.branchSortOrder": "alphabetically",
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
+
+  // Git Graph
+  "git-graph.date.format": "ISO Date & Time",
+  "git-graph.repository.commits.showSignatureStatus": true,
 
   // GitLens
   "gitlens.ai.enabled": false,
@@ -90,6 +95,8 @@
   "gitlens.integrations.enabled": false,
   "gitlens.launchpad.indicator.enabled": false,
   "gitlens.plusFeatures.enabled": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.statusBar.enabled": false,
   "gitlens.views.branches.branches.layout": "list",
   "gitlens.views.repositories.files.layout": "tree",
   "gitlens.views.showRelativeDateMarkers": false,
@@ -101,11 +108,4 @@
   // Firefox
   "firefox.profile": "dev-edition-default",
   "firefox.keepProfileChanges": true,
-
-  // Java
-  "java.compile.nullAnalysis.mode": "automatic",
-  "java.configuration.updateBuildConfiguration": "automatic",
-
-  // Spring
-  "spring.initializr.parentFolder": "none",
 }
