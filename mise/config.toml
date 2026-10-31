@@ -1,0 +1,5 @@
+[tools]
+java = "temurin-25"
+python = "3.13"
+node = "26"
+pnpm = "12"
