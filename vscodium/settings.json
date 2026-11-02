@@ -23,6 +23,7 @@
   "workbench.experimental.modernUI": true,
   "workbench.hover.delay": 300,
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.localHistory.enabled": false,
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "none",
@@ -55,7 +56,6 @@
   // Privacy
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
-  "gitlens.telemetry.enabled": false,
 
   // Files
   "files.exclude": {
@@ -74,32 +74,16 @@
   },
 
   // Git
-  "git.blame.editorDecoration.enabled": false,
+  "git.blame.editorDecoration.enabled": true,
   "git.blame.editorDecoration.template": "${authorName}, ${authorDateAgo} • ${subject}",
   "git.blame.statusBarItem.enabled": true,
   "git.branchSortOrder": "alphabetically",
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
 
-  // Git Graph
-  "git-graph.date.format": "ISO Date & Time",
-  "git-graph.repository.commits.showSignatureStatus": true,
-
-  // GitLens
-  "gitlens.ai.enabled": false,
-  "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm Z",
-  "gitlens.defaultDateStyle": "relative",
-  "gitlens.defaultGravatarsStyle": "mp",
-  "gitlens.graph.layout": "editor",
-  "gitlens.graph.minimap.enabled": false,
-  "gitlens.integrations.enabled": false,
-  "gitlens.launchpad.indicator.enabled": false,
-  "gitlens.plusFeatures.enabled": false,
-  "gitlens.showWhatsNewAfterUpgrades": false,
-  "gitlens.statusBar.enabled": false,
-  "gitlens.views.branches.branches.layout": "list",
-  "gitlens.views.repositories.files.layout": "tree",
-  "gitlens.views.showRelativeDateMarkers": false,
+  // Diffs
+  "diffEditor.renderSideBySide": true,
+  "diffEditor.useInlineViewWhenSpaceIsLimited": true,
 
   // HTML
   "html.format.indentInnerHtml": true,
@@ -108,4 +92,5 @@
   // Firefox
   "firefox.profile": "dev-edition-default",
   "firefox.keepProfileChanges": true,
+  
 }
