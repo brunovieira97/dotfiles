@@ -245,8 +245,8 @@ function setup_zsh() {
 
 function setup_vscodium() {
 	print_step_ln "Linking User settings"
-	create_symlink "$BASE_PATH/vscodium/settings.json" "$HOME/Library/Application\ Support/VSCodium/User/settings.json"
+	create_symlink "$BASE_PATH/vscodium/settings.json" "$HOME/Library/Application Support/VSCodium/User/settings.json"
 
 	print_step_ln "Linking User keybindings"
-	create_symlink "$BASE_PATH/vscodium/keybindings.json" "$HOME/Library/Application\ Support/VSCodium/User/keybindings.json"
+	create_symlink "$BASE_PATH/vscodium/keybindings.json" "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
 }
