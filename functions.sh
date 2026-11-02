@@ -9,7 +9,7 @@ function create_symlink() {
 
 	ln -Ffs "$1" "$2" > /dev/null
 
-	if [[ -f "$2" ]]; then
+	if [[ -L "$2" ]]; then
 		success
 	else
 		fail
