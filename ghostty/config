@@ -37,3 +37,6 @@ window-padding-y = 5
 
 # macOS
 macos-secure-input-indication = true
+
+# fix sudo commands not dealing with xterm-ghostty
+shell-integration-features = sudo
