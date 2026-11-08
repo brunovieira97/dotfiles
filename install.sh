@@ -20,7 +20,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 touch $HOME/.hushlogin > /dev/null
 
-print_title "XCode Tools"
+print_title "Xcode Tools"
 setup_xcode_tools
 
 print_title "Homebrew"
@@ -32,7 +32,7 @@ setup_zsh
 print_title "Mise-en-place"
 setup_mise
 
-print_title "MacOS"
+print_title "macOS"
 setup_macos
 
 print_title "SSH"
@@ -55,6 +55,9 @@ setup_ghostty
 
 print_title "VSCodium"
 setup_vscodium
+
+print_title "IntelliJ IDEA"
+setup_intellij_idea
 
 printf "Setup finished. It is advised to reboot now.\n"
 read -p "Do you want to reboot? [y/N] " -n 1 -r

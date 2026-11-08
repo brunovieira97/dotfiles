@@ -7,7 +7,7 @@ function create_symlink() {
 
 	print_step "Creating symlink for: $filename"
 
-	ln -Ffs "$1" "$2" > /dev/null
+	ln -Ffs "$1" "$2" &> /dev/null
 
 	if [[ -L "$2" ]]; then
 		success
@@ -69,10 +69,36 @@ function homebrew_restore_brewfile() {
 	fi
 }
 
+function macos_defaults() {
+	print_step "Running ${TEXT_BOLD}$BASE_PATH/macos/defaults.sh${TEXT_NORMAL}"
+	
+	source "$BASE_PATH/macos/defaults.sh" &> /dev/null
+
+	if [ $? -eq 0 ]; then
+		success
+	else
+		fail
+		exit 1
+	fi
+}
+
+function macos_defaults_delete() {
+	print_step "Running ${TEXT_BOLD}$BASE_PATH/macos/defaults-delete.sh${TEXT_NORMAL}"
+	
+	source "$BASE_PATH/macos/defaults-delete.sh" &> /dev/null
+
+	if [ $? -eq 0 ]; then
+		success
+	else
+		fail
+		exit 1
+	fi
+}
+
 function zsh_set_default() {
 	print_step "Changing default shell to Zsh"
 
-	chsh -s $zshPath > /dev/null
+	chsh -s $zshPath &> /dev/null
 
 	if is_zsh_default; then
 		success
@@ -100,12 +126,12 @@ function zsh_clone_plugins() {
 
 	if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting" ]; then
 		git clone --quiet https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
-		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting > /dev/null
+		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting &> /dev/null
 	fi
 
 	if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-shift-select" ]; then
 		git clone --quiet https://github.com/jirutka/zsh-shift-select.git \
-		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-shift-select > /dev/null
+		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-shift-select &> /dev/null
 	fi
 
 	if [ $? -ne 0 ]; then
@@ -119,13 +145,13 @@ function zsh_clone_plugins() {
 # Main functions
 
 function setup_xcode_tools() {
-	print_step "Checking if XCode Command Line Tools are installed"
+	print_step "Checking if Xcode Command Line Tools are installed"
 
 	if ! is_xcode_tools_installed; then
 		fail "Not found!"
-		print_step "Installing XCode Command Line Tools"
+		print_step "Installing Xcode Command Line Tools"
 
-		xcode-select --install > /dev/null
+		xcode-select --install &> /dev/null
 
 		if is_xcode_tools_installed; then
 			success "Done."
@@ -149,7 +175,7 @@ function setup_homebrew() {
 		success "Already installed."
 		print_step "Running ${TEXT_BOLD}brew update${TEXT_NORMAL}"
 		
-		/bin/bash -c "brew update --quiet" > /dev/null
+		/bin/bash -c "brew update --quiet" &> /dev/null
 		
 		success
 	fi
@@ -167,19 +193,6 @@ function setup_ghostty() {
 	mkdir -p ~/.config
 
 	create_symlink "$BASE_PATH/ghostty" "$HOME/.config/ghostty"
-}
-
-function macos_defaults() {
-	print_step "Running ${TEXT_BOLD}$BASE_PATH/macos/defaults.sh${TEXT_NORMAL}"
-	
-	source "$BASE_PATH/macos/defaults.sh" > /dev/null
-
-	if [ $? -eq 0 ]; then
-		success
-	else
-		fail
-		exit 1
-	fi
 }
 
 function setup_macos() {
@@ -249,4 +262,17 @@ function setup_vscodium() {
 
 	print_step_ln "Linking User keybindings"
 	create_symlink "$BASE_PATH/vscodium/keybindings.json" "$HOME/Library/Application Support/VSCodium/User/keybindings.json"
+}
+
+function setup_intellij_idea() {
+	mkdir -p ~/.config/intellij-idea
+
+	print_step_ln "Linking codestyles"
+	create_symlink "$BASE_PATH/intellij-idea/codestyles" "$HOME/.config/intellij-idea/codestyles"
+
+	print_step_ln "Linking color schemes"
+	create_symlink "$BASE_PATH/intellij-idea/color-schemes" "$HOME/.config/intellij-idea/colors"
+
+	print_step_ln "Linking keymaps"
+	create_symlink "$BASE_PATH/intellij-idea/keymaps" "$HOME/.config/intellij-idea/keymaps"
 }
