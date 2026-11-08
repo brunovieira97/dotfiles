@@ -1,12 +1,12 @@
 #!/bin/bash
 
 if [ -t 1 ]; then
-    COLOR_TITLE='\033[1;33m'
-    COLOR_EXTRA='\033[1;30m'
-    COLOR_INFO='\033[1;34m'
-    COLOR_RESET='\033[0m'
-    COLOR_FAIL='\033[0;31m'
-    COLOR_SUCCESS='\033[0;32m'
+    COLOR_TITLE=$'\033[1;33m'
+    COLOR_EXTRA=$'\033[1;30m'
+    COLOR_INFO=$'\033[1;34m'
+    COLOR_RESET=$'\033[0m'
+    COLOR_FAIL=$'\033[0;31m'
+    COLOR_SUCCESS=$'\033[0;32m'
     
     TEXT_BOLD="$(tput bold 2>/dev/null || true)"
     TEXT_NORMAL="$(tput sgr0 2>/dev/null || true)"
