@@ -18,9 +18,12 @@ print_info "Running on ${PRODUCT_NAME} ${PRODUCT_VERSION}"
 # Keep-alive: update existing `sudo` timestamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-touch $HOME/.hushlogin > /dev/null
+# Persists keep-alive loop PID for killing it later
+SUDO_KEEPALIVE_PID=$!
 
-print_title "XCode Tools"
+touch "$HOME/.hushlogin" &> /dev/null
+
+print_title "Xcode Tools"
 setup_xcode_tools
 
 print_title "Homebrew"
@@ -56,12 +59,18 @@ setup_ghostty
 print_title "VSCodium"
 setup_vscodium
 
+print_title "IntelliJ IDEA"
+setup_intellij_idea
+
+kill "$SUDO_KEEPALIVE_PID" 2>/dev/null
+
 printf "Setup finished. It is advised to reboot now.\n"
 read -p "Do you want to reboot? [y/N] " -n 1 -r
+printf "\n"
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     sudo reboot
 else
-	exit 0
+    exit 0
 fi
