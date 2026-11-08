@@ -50,11 +50,11 @@ macos_defaults_delete
 print_title "Homebrew"
 print_step_ln "Running Homebrew official uninstaller"
 if command -v brew &> /dev/null; then
-    CI=1 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)" -- --force --zap &> /dev/null
-else
-    if [[ -d "/opt/homebrew" ]]; then
-        sudo rm -rf "/opt/homebrew" &> /dev/null
-    fi
+    CI=1 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)" -- --force &> /dev/null
+fi
+
+if [[ -d "/opt/homebrew" ]]; then
+	sudo rm -rf "/opt/homebrew" &> /dev/null
 fi
 
 print_title "Oh-My-Zsh"
