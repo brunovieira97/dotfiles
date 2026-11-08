@@ -12,7 +12,7 @@ function create_symlink() {
 
     mkdir -p "$(dirname "$dest")"
 
-    ln -Ffs "$src" "$dest" > /dev/null
+    ln -Ffs "$src" "$dest" &> /dev/null
 
     if [[ -L "$dest" ]]; then
         success
@@ -34,9 +34,9 @@ function copy_file() {
 
     if [ -d "$src" ]; then
         mkdir -p "$dest"
-        cp -RPp "$src"/* "$dest"/ 2>/dev/null || true
+        cp -RPp "$src"/* "$dest"/ &> /dev/null || true
     else
-        cp -p "$src" "$dest"
+        cp -p "$src" "$dest" &> /dev/null
     fi
 
     if [ $? -eq 0 ]; then
@@ -88,9 +88,24 @@ function homebrew_restore_brewfile() {
 }
 
 function macos_defaults() {
-    print_step "Running ${TEXT_BOLD}$BASE_PATH/macos/defaults.sh${TEXT_NORMAL}"
+    print_step "Running %s%s/macos/defaults.sh%s" "$TEXT_BOLD" "$BASE_PATH" "$TEXT_NORMAL"
+    printf "\n"
     
-    source "$BASE_PATH/macos/defaults.sh" > /dev/null
+    source "$BASE_PATH/macos/defaults.sh" &> /dev/null
+
+    if [ $? -eq 0 ]; then
+        success
+    else
+        fail
+        exit 1
+    fi
+}
+
+function macos_defaults_delete() {
+    print_step "Running %s%s/macos/defaults-delete.sh%s" "$TEXT_BOLD" "$BASE_PATH" "$TEXT_NORMAL"
+    printf "\n"
+    
+    source "$BASE_PATH/macos/defaults-delete.sh" &> /dev/null
 
     if [ $? -eq 0 ]; then
         success
@@ -106,7 +121,7 @@ function zsh_set_default() {
     
     print_step "Changing default shell to Zsh"
 
-    chsh -s "$zshPath" > /dev/null
+    chsh -s "$zshPath" &> /dev/null
 
     if is_zsh_default; then
         success
@@ -136,17 +151,12 @@ function zsh_clone_plugins() {
 
     if [ ! -d "$custom_dir/plugins/fast-syntax-highlighting" ]; then
         git clone --quiet https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
-        "$custom_dir/plugins/fast-syntax-highlighting" > /dev/null
+        "$custom_dir/plugins/fast-syntax-highlighting" &> /dev/null || { fail; exit 1; }
     fi
 
     if [ ! -d "$custom_dir/plugins/zsh-shift-select" ]; then
         git clone --quiet https://github.com/jirutka/zsh-shift-select.git \
-        "$custom_dir/plugins/zsh-shift-select" > /dev/null
-    fi
-
-    if [ $? -ne 0 ]; then
-        fail
-        exit 1
+        "$custom_dir/plugins/zsh-shift-select" &> /dev/null || { fail; exit 1; }
     fi
 
     success
@@ -161,7 +171,7 @@ function setup_xcode_tools() {
         fail "Not found!"
         print_step "Installing XCode Command Line Tools"
 
-        xcode-select --install > /dev/null
+        xcode-select --install &> /dev/null
 
         if is_xcode_tools_installed; then
             success "Done."
@@ -185,7 +195,7 @@ function setup_homebrew() {
         success "Already installed."
         print_step "Running %sbrew update%s" "$TEXT_BOLD" "$TEXT_NORMAL"
         
-        /bin/bash -c "brew update --quiet" > /dev/null
+        /bin/bash -c "brew update --quiet" &> /dev/null
         
         success
     fi

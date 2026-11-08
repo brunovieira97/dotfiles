@@ -16,7 +16,7 @@ printf "\n💻 Dotfiles setup\n\n"
 print_info "Running on ${PRODUCT_NAME} ${PRODUCT_VERSION}"
 
 # Keep-alive: update existing `sudo` timestamp until script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do sudo -n true; sleep 20; kill -0 "$$" || exit; done &> /dev/null &
 
 # Persists keep-alive loop PID for killing it later
 SUDO_KEEPALIVE_PID=$!
@@ -62,7 +62,7 @@ setup_vscodium
 print_title "IntelliJ IDEA"
 setup_intellij_idea
 
-kill "$SUDO_KEEPALIVE_PID" 2>/dev/null
+kill "$SUDO_KEEPALIVE_PID" &> /dev/null
 
 printf "Setup finished. It is advised to reboot now.\n"
 read -p "Do you want to reboot? [y/N] " -n 1 -r
