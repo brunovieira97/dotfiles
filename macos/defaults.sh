@@ -80,6 +80,8 @@
 	defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 	# Don't create .DS_Store for network volumes
 	defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+	# Disable preview controls in Finder for PDFs and media files
+	defaults write com.apple.finder QLInlinePreviewMinimumSupportedSize -integer 256
 
 	# Security and Privacy
 	# Require password immediately after sleep or screen saver begins

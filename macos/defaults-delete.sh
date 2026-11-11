@@ -43,6 +43,7 @@
 	defaults delete com.apple.finder "_FXEnableColumnAutoSizing"
 	defaults delete com.apple.desktopservices DSDontWriteUSBStores
 	defaults delete com.apple.desktopservices DSDontWriteNetworkStores
+	defaults delete com.apple.finder QLInlinePreviewMinimumSupportedSize
 
 	# Security and Privacy
 	defaults delete com.apple.screensaver askForPassword
